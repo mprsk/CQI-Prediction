@@ -24,7 +24,7 @@ In this project, we use [Open Air Interface - OAI](https://openairinterface.org/
 8) [gnb.sa.band78.fr1.106PRB.2x2.usrpn300.conf](https://github.com/mprsk/CQI-Prediction/blob/main/gnb.sa.band78.fr1.106PRB.2x2.usrpn300.conf): OAI gNB configuration file for supporting 2x2 MIMO with 40 MHz bandwidth, 30 KHz SCS, and TDD configuration
 9) [ue.conf](https://github.com/mprsk/CQI-Prediction/blob/main/ue.conf): OAI UE configuration file for supporting 2x2 MIMO
 10) [channelmod_rfsimu.conf](https://github.com/mprsk/CQI-Prediction/blob/main/channelmod_rfsimu.conf): Channel model configuration for OAI RF Simulator
-11) 
+
 ## Deployment Steps:
 1) Setup OAI 5G CN, RAN, and FlexRIC
 2) 
