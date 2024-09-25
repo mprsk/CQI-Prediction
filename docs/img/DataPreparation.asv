@@ -1,0 +1,23 @@
+clc;
+clear all;
+close all;
+
+N = 1e5; % Number of data points
+
+fileID = fopen('channel_simu.exp','w');
+fprintf(fileID,'#!/usr/bin/expect -f\n');
+
+% To change the channel parameters in DL (at UE)
+fprintf(fileID,'spawn telnet 127.0.0.1 9091\n');
+
+fprintf(fileID, 'send "\\r\"\n');
+fprintf(fileID,'expect "softmodem_5Gue"\n');
+
+fprintf(fileID,'send "channelmod modify 0 noise_power_dB -50\\r"\n');
+fprintf(fileID,'sleep 5\n');
+
+
+for i=1:numel
+
+end
+
