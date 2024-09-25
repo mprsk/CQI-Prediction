@@ -95,6 +95,11 @@ make -j`nproc`
 sudo make install
 ```
 ### Start the gNB and UE softmodems
+Copy the gNB ([gnb.sa.band78.fr1.106PRB.2x2.usrpn300.conf](https://github.com/mprsk/CQI-Prediction/blob/main/gnb.sa.band78.fr1.106PRB.2x2.usrpn300.conf)), UE ( [ue.conf](https://github.com/mprsk/CQI-Prediction/blob/main/ue.conf):), and channel model configuration ([channelmod_rfsimu.conf](https://github.com/mprsk/CQI-Prediction/blob/main/channelmod_rfsimu.conf)) files to the following directory
+```
+~/oai/targets/PROJECTS/GENERIC-NR-5GC/CONF
+```
+
 To start the gNB
 ```
 cd ~/oai/cmake_targets/ran_build/build
