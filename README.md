@@ -13,4 +13,6 @@
 2) Dr. Arun Kumar Singh, Associate Professor, Dept. of EE, IIT Jodhpur
 
 ## File Descriptions:
-
+In this project, we use [Open Air Interface - OAI](https://openairinterface.org/) 5G CN, RAN, and FlexRIC for deployment of O-RAN compliant 5G network. The below describes the usage of individual files:
+1) [DataPreparation.m](https://github.com/mprsk/CQI-Prediction/blob/main/DataPreparation.m): A MATLAB script written for preparing an expect script that can automate varying channel parameters (noise power in this case) over telnet session in OAI RF Simulator periodically. This will help us in generating a CQI database ([CQI_DATASET](https://github.com/mprsk/CQI-Prediction/blob/main/CQI_DATASET)) that can be used for model training.
+2) 
