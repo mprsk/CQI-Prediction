@@ -26,5 +26,5 @@ In this project, we use [Open Air Interface - OAI](https://openairinterface.org/
 10) [channelmod_rfsimu.conf](https://github.com/mprsk/CQI-Prediction/blob/main/channelmod_rfsimu.conf): Channel model configuration for OAI RF Simulator
 
 ## Deployment Steps:
-1) Setup OAI 5G CN, RAN, and FlexRIC
+1) [Setup OAI 5G CN, RAN, and FlexRIC](https://github.com/mprsk/CQI-Prediction/blob/main/docs/OAI%20Setup.md)
 2) 
