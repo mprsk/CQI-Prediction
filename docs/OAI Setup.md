@@ -51,7 +51,8 @@ After execution of all the above commands, check if all the CN containers are de
 ```
 sudo docker ps -a
 ```
-
+The result should be as shown below
+![5G CN containers health status](https://github.com/mprsk/CQI-Prediction/blob/main/docs/OAI%205GCN.png)
 
 
 
