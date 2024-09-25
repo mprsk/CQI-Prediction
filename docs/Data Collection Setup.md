@@ -2,7 +2,10 @@ After starting OAI CN, RAN, and FlexRIC using the guide [Setup OAI 5G CN, RAN, a
 
 ### Vary channel parameters in the DL
 Run the expect script ([channel_parameter_simulator.exp](https://github.com/mprsk/CQI-Prediction/blob/main/channel_parameter_simulator.exp)) generated using the MATLAB script ([DataPreparation.m](https://github.com/mprsk/CQI-Prediction/blob/main/DataPreparation.m))
-
+```
+chmod +x channel_parameter_simulator.exp
+./channel_parameter_simulator.exp
+```
 The output should like the following
 ![Channel simulator](https://github.com/mprsk/CQI-Prediction/blob/main/docs/img/ChannelSimulator.png)
 
