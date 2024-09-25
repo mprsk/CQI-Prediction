@@ -15,4 +15,14 @@ Run the xApp [xapp_mac_stats_prediction.py](https://github.com/mprsk/CQI-Predict
 
 ### Viewing dataset
 The dataset can be viewed using SQLite3 DB Browser
+![Sample training dataset](https://github.com/mprsk/CQI-Prediction/blob/main/docs/img/data.png)
+
+### Perform training
+Now perform the training by running the Python script [CQI_PREDICTION_OAI.py](https://github.com/mprsk/CQI-Prediction/blob/main/CQI_PREDICTION_OAI.py). Make sure to change the SQLite3 DB file name to the one generated above in the code.
+
+```
+python3 CQI_PREDICTION.py
+```
+
+
 
