@@ -13,7 +13,13 @@ While this is running, on the UE logs, you can observe the change in CQI values 
 ![UE logs with cannel simulator](https://github.com/mprsk/CQI-Prediction/blob/main/docs/img/UE%20CQI%20Logs.png)
 
 ### Setting up of xApp
-Run the xApp [xapp_mac_stats_prediction.py](https://github.com/mprsk/CQI-Prediction/blob/main/xapp_mac_stats_prediction.py). It shows the DB name and location where the data collection is performed. The same is shown in below figure
+Run the xApp [xapp_mac_stats_prediction.py](https://github.com/mprsk/CQI-Prediction/blob/main/xapp_mac_stats_prediction.py). 
+```
+cd ~/flexric/build/examples/xApp/python3
+python3 xapp_mac_stats_prediction.py
+```
+
+It shows the DB name and location where the data collection is performed. The same is shown in below figure
 ![xApp data collection](https://github.com/mprsk/CQI-Prediction/blob/main/docs/img/xApp%20DB%20location.png)
 
 ### Viewing dataset
@@ -26,6 +32,12 @@ Now perform the training by running the Python script [CQI_PREDICTION_OAI.py](ht
 ```
 python3 CQI_PREDICTION.py
 ```
+Once the training completes, it generates two files
+1) Trained model for use in xApp for prediction: [trained_model.keras](https://github.com/mprsk/CQI-Prediction/blob/main/trained_model.keras)
+2) MinMaxScalre used during training which can be used in xApp during prediction: [scaler_training.bin](https://github.com/mprsk/CQI-Prediction/blob/main/scaler_training.bin): 
+
+> [!NOTE]
+> Currently the xApp ![xApp data collection](https://github.com/mprsk/CQI-Prediction/blob/main/docs/img/xApp%20DB%20location.png) does both data collection and prediction simultaneously. Hence the generated [trained_model.keras](https://github.com/mprsk/CQI-Prediction/blob/main/trained_model.keras) and [scaler_training.bin](https://github.com/mprsk/CQI-Prediction/blob/main/scaler_training.bin) are already integrated within the same xApp
 
 
 
