@@ -110,3 +110,9 @@ To start the UE
 cd ~/oai/cmake_targets/ran_build/build
 sudo ./nr-uesoftmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/ue.conf -r 106 --numerology 1 --band 78 -C 3319680000 --rfsim --sa --rfsimulator.serveraddr 127.0.0.1 --ue-nb-ant-rx 2 --ue-nb-ant-tx 2 --rfsimulator.options chanmod --telnetsrv --telnetsrv.listenport 9091
 ```
+### Start the near-RT RIC
+```
+cd ~/
+./flexric/build/examples/ric/nearRT-RIC
+```
+
