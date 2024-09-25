@@ -55,4 +55,42 @@ The result should be as shown below
 ![5G CN containers health status](https://github.com/mprsk/CQI-Prediction/blob/main/docs/OAI%205GCN.png)
 
 
+### Setup OAI Radio Access Network and UE
+Clone the OAI 5G RAN repository and checkout the oaic_workshop_2024_v1 branch. This has the FlexRIC repo cloned into OAI already. Alternatively, one can follow the steps provided by OAI in this [guide](https://gitlab.eurecom.fr/oai/openairinterface5g)
+```
+git clone https://github.com/openaicellular/openairinterface5G.git ~/oai
+cd ~/oai
+git checkout oaic_workshop_2024_v1
+cd ~/oai/cmake_targets/
+./build_oai -I -w SIMU --gNB --nrUE --build-e2 --ninja
+```
 
+### Setup FlexRIC
+This is required for running the xapp
+
+Clone the OAI 5G RAN repository and checkout the beabdd07 commit.
+```
+git clone https://github.com/openaicellular/flexric.git ~/flexric
+cd ~/flexric
+git checkout beabdd07
+```
+Copy the xApp [xapp_mac_stats_prediction.py](https://github.com/mprsk/CQI-Prediction/blob/main/xapp_mac_stats_prediction.py) into the following folders
+
+```
+flexric/examples/xApp/python3
+flexric/build/examples/xApp/python3
+```
+
+Build the flexRIC module.
+
+```
+mkdir build
+cd build
+cmake ../
+```
+
+Install the FlexRIC libraries and xApps
+```
+make -j`nproc`
+sudo make install
+```
