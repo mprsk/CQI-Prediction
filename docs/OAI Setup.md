@@ -37,7 +37,7 @@ sudo apt install -y docker-buildx-plugin docker-compose-plugin
 sudo docker compose --version
 ```
 
-### Setup OAI 5G Core Network
+### Setup OAI 5G Core Network
 ```
 wget -O ~/oai-cn5g.zip https://gitlab.eurecom.fr/oai/openairinterface5g/-/archive/develop/openairinterface5g-develop.zip?path=doc/tutorial_resources/oai-cn5g
 unzip ~/oai-cn5g.zip
@@ -52,7 +52,7 @@ After execution of all the above commands, check if all the CN containers are de
 sudo docker ps -a
 ```
 The result should be as shown below
-![5G CN containers health status](https://github.com/mprsk/CQI-Prediction/blob/main/docs/OAI%205GCN.png)
+![5G CN containers health status](https://github.com/mprsk/CQI-Prediction/blob/main/docs/img/OAI%205GCN.png)
 
 
 ### Setup OAI Radio Access Network and UE
