@@ -151,3 +151,10 @@ We use a sliding window mechanism, where every time a new CQI value is received,
 ```
  self.pred_CQI =  np.rint(self.scaler.inverse_transform(self.model.predict(normalized_in.reshape((1, 400, 1)), verbose=0)))
 ```
+This prediction happens for every frame and the xApps displays the logs for every 100 frames as shown below along with the mean absolute error (MAE) and mean square error (MSE) for prediction. Kindly note that, during vaidation phase we simulate the channel using the expect script [channel_parameter_simulator_validation.exp](https://github.com/mprsk/CQI-Prediction/blob/main/channel_parameter_simulator_validation.exp), thereby ensuring the model validation is performed on the data which was not seen during training phase. Again, this script is generated using the Matlab utility [DataPreparation.m](https://github.com/mprsk/CQI-Prediction/blob/main/DataPreparation.m) initialized with a random seed.
+
+The below log output of the xApp shows the prediction statistics during validation phase.
+
+![Prediction log during validation](https://github.com/mprsk/CQI-Prediction/blob/main/docs/img/prediction%20log.png)
+
+It can be observed the MAE and MSE are approximately <0.5 (CQI units) and <2 (CQI^2) units which indicates a very good performance of the proposed model.
