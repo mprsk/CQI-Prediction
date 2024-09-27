@@ -2,7 +2,7 @@
 
 Once the model training is completed, the two files that are created include
 1) Trained model for use in xApp for prediction: [trained_model.keras](https://github.com/mprsk/CQI-Prediction/blob/main/trained_model.keras)
-2) MinMaxScalre used during training which can be used in xApp during prediction: [scaler_training.bin](https://github.com/mprsk/CQI-Prediction/blob/main/scaler_training.bin)
+2) MinMaxScaler used during training which can be used in xApp during prediction: [scaler_training.bin](https://github.com/mprsk/CQI-Prediction/blob/main/scaler_training.bin)
 
 ### Loading the trained model into the xApp for the prediction
 The xApp  [xapp_mac_stats_prediction.py](https://github.com/mprsk/CQI-Prediction/blob/main/xapp_mac_stats_prediction.py) which is used for the data collection also has the prediction integrated. The below class ```MACCallback``` shows the integration of the prediction model. Especially, note that in the definition of ```__init__(self)```, we load the saved model and the scaler described above:
