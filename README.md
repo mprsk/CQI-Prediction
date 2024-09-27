@@ -27,4 +27,5 @@ In this project, we use [Open Air Interface - OAI](https://openairinterface.org/
 
 ## Deployment Steps:
 1) [Setup OAI 5G CN, RAN, and FlexRIC](https://github.com/mprsk/CQI-Prediction/blob/main/docs/OAI%20Setup.md)
-2) 
+2) [Data Collection Setup](https://github.com/mprsk/CQI-Prediction/blob/main/docs/Data%20Collection%20Setup.md)
+3) [Performing Prediction Using xApp](https://github.com/mprsk/CQI-Prediction/blob/main/docs/Performing%20prediction%20using%20xApp.md)
