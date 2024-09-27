@@ -91,3 +91,63 @@ class MACCallback(ric.mac_cb):
 
 
 ```
+
+### Important points to note in the code
+The definition ```handle(self, ind)``` is where the majorty of prediction logic is implemented. The below code excerpt taken from the ```handle(self, ind)``` basically handles loading the first 400 frame CQI values into the ```input``` array received through RIC indication messages.
+
+```
+# Wait until the input buffer is filled. Our input for prediction is recent CQI values for 400 frames
+              if (self.ready < 400):
+                 self.input[self.ready] = ind.ue_stats[0].wb_cqi
+                 self.ready = self.ready + 1
+
+```
+Once, the input 400 CQI values are loaded, we then start prediction using the below code excerpt.
+
+```
+ else:
+                 # Perform left shift to inser the recent CQI at the end of the input
+                 self.input[0:398] = self.input[1:399]
+                 self.input[399] = ind.ue_stats[0].wb_cqi
+                 try:
+                    self.pred_log = self.pred_log + '['+str(self.prev_frame) + ',' + str(int(self.input[-1])).rjust(2, '0') + ',' + str(int(self.pred_CQI)).rjust(2, '0') + '],   '
+                    if(self.pred_count%10==0): 
+                       self.pred_log = self.pred_log + '\n'
+                    if(self.pred_count>0):
+                       if(self.input[-1]==self.pred_CQI):
+                          self.accuracy = self.accuracy+1
+                       error = np.abs(self.input[-1]-self.pred_CQI)
+                       self.mae = self.mae+ error
+                       self.mse = self.mse + error**2
+
+#                    print('Frame: ' + str(self.prev_frame) + ', Real CQI: '+ str(self.input[-1]) + ', Predicted CQI: ' + str(self.pred_CQI))
+                       if(self.pred_count%100==0):
+                          error_mae = round(self.mae.item()/self.pred_count,2)
+                          error_mse = round(self.mse.item()/self.pred_count,2)
+                          acc = round(self.accuracy*100/self.pred_count,2)
+                          print(self.pred_log)
+                          print('Stats Summary (100 frames) - Time Elapsed: '+ str(round(time.time()-self.t,2)) + ' Sec, MAE: ' + str(error_mae) + ' (CQI), MSE: ', str(error_mse) + ' (CQI^2)')
+
+#                         To print accuracy enable the below line and comment the aboe line
+#                          print('Time Elapsed: '+ str(round(time.time()-self.t,2)) + ' Sec, Frame: ' + str(self.prev_frame) + ', Accuracy: '+ str(acc) + '%, MAE: ' + str(error_mae) + ', MSE: ', str(error_mse))
+
+                          print('------------------------------------------------------------------------------------')
+                          self.pred_log = '\n\nFrame Level Predictions [Frame Number, Actual CQI, Predicted CQI]\n\n'
+                    
+                    self.prev_frame = ind.ue_stats[0].frame
+
+                    # Scale the input using the MinMaxScaler fitted during the training procedure. Scales from [0,15] -> [0,1]
+                    normalized_in = self.scaler.transform(self.input.reshape(len(self.input),1))
+
+
+                    # Make the prediction and do inverse of scaling to get the CQI mapping of [0,15] from scaled prediction [0,1]
+                    self.pred_CQI =  np.rint(self.scaler.inverse_transform(self.model.predict(normalized_in.reshape((1, 400, 1)), verbose=0))) 
+                    if(self.pred_CQI>15): self.pred_CQI = 15
+                    self.pred_count = self.pred_count + 1
+```
+
+We use a sliding window mechanism, where every time a new CQI value is received, the first CQI value in ```input``` which is ```input[0]``` is flushed out and we move entire contents left by one index. Finally, we load the new CQI update received from RIC indication message at end of the ```input``` array. Then we normalize this input array (```normalized_in = self.scaler.transform(self.input.reshape(len(self.input),1))```) using MinMaxScaler acquired during training phase to predict the next CQI value using the below code excerpt.
+
+```
+ self.pred_CQI =  np.rint(self.scaler.inverse_transform(self.model.predict(normalized_in.reshape((1, 400, 1)), verbose=0)))
+```
