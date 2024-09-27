@@ -34,7 +34,7 @@ python3 CQI_PREDICTION.py
 ```
 Once the training completes, it generates two files
 1) Trained model for use in xApp for prediction: [trained_model.keras](https://github.com/mprsk/CQI-Prediction/blob/main/trained_model.keras)
-2) MinMaxScalre used during training which can be used in xApp during prediction: [scaler_training.bin](https://github.com/mprsk/CQI-Prediction/blob/main/scaler_training.bin): 
+2) MinMaxScalre used during training which can be used in xApp during prediction: [scaler_training.bin](https://github.com/mprsk/CQI-Prediction/blob/main/scaler_training.bin)
 
 > [!NOTE]
 > Currently the xApp [xapp_mac_stats_prediction.py](https://github.com/mprsk/CQI-Prediction/blob/main/xapp_mac_stats_prediction.py) does both data collection and prediction simultaneously. Hence the generated [trained_model.keras](https://github.com/mprsk/CQI-Prediction/blob/main/trained_model.keras) and [scaler_training.bin](https://github.com/mprsk/CQI-Prediction/blob/main/scaler_training.bin) are already integrated within the same xApp
