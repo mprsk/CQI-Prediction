@@ -10,6 +10,9 @@
 **Faculty Mentors:**
 1) Dr. Sai Kiran M. P. R., Assistant Professor, Dept. of EE, IIT Jodpur
 2) Dr. Arun Kumar Singh, Associate Professor, Dept. of EE, IIT Jodhpur
+   
+## Report Submitted
+To access the detailed report or input document submitted: [Input Document for Hackathon](https://github.com/mprsk/CQI-Prediction/blob/main/INPUT%20DOCUMENT%20-%20IITJ%20-%20A%20Real%20Time%20CQI%20Prediction%20Framework%20for%20Proactive%20Resource%20Scheduling%20in%205G%20Enabled%20Drones%20Using%20%20AI.pdf)
 
 ## File Descriptions:
 In this project, we use [Open Air Interface - OAI](https://openairinterface.org/) 5G CN, RAN, and FlexRIC for deployment of O-RAN compliant 5G network. The below describes the usage of individual files:
