@@ -16,6 +16,7 @@ To access the detailed report or input document submitted: [Input Document for H
 
 For accessing the PPT Slides: [PPT Submitted for Hackathon](https://github.com/mprsk/CQI-Prediction/blob/main/docs/PPT-IITJ-A%20Real-time%20CQI%20Prediction%20Framework%20for%20Proactive%20Resource%20Scheduling%20in%205G%20Enabled%20Drones%20Using%20%20AI.pdf)
 
+Link to Demonstration: [Demo](https://drive.google.com/file/d/124mjP_nyRF04Y7h0eEQ-d7MRl5wvXIsC/view?usp=drive_link)
 ## File Descriptions:
 In this project, we use [Open Air Interface - OAI](https://openairinterface.org/) 5G CN, RAN, and FlexRIC for deployment of O-RAN compliant 5G network. The below describes the usage of individual files:
 1) [DataPreparation.m](https://github.com/mprsk/CQI-Prediction/blob/main/DataPreparation.m): A MATLAB script written for preparing an expect script that can automate varying channel parameters (noise power in this case) over telnet session in OAI RF Simulator periodically. This will help us in generating a CQI database ([CQI_DATASET](https://github.com/mprsk/CQI-Prediction/blob/main/CQI_DATASET)) that can be used for model training.
