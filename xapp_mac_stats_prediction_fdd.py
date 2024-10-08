@@ -50,11 +50,11 @@ class MACCallback(ric.mac_cb):
         ric.mac_cb.__init__(self)
 
         # Load the trained model for real-time prediction
-        self.model = tf.keras.models.load_model('trained_model.keras')
+        self.model = tf.keras.models.load_model('trained_model_fdd.keras')
         self.model.summary()
 
         # Load the scaler used during the training (MinMaxScaler)
-        self.scaler = load('scaler_training.bin')
+        self.scaler = load('scaler_training_fdd.bin')
         print('Min: %f, Max: %f' % (self.scaler.data_min_, self.scaler.data_max_))
 
     # Override C++ method: virtual void handle(swig_mac_ind_msg_t a) = 0;
@@ -134,13 +134,13 @@ for i in range(0, len(conn)):
 mac_hndlr = []
 for i in range(0, len(conn)):
     mac_cb = MACCallback()
-    hndlr = ric.report_mac_sm(conn[i].id, ric.Interval_ms_10, mac_cb)
+    hndlr = ric.report_mac_sm(conn[i].id, ric.Interval_ms_1, mac_cb)
     mac_hndlr.append(hndlr)     
     time.sleep(1)
 
 
 # Define the xApp execution time (100s in this case)
-time.sleep(100)
+time.sleep(300)
 
 # Remove the handler created for MAC and free resources
 for i in range(0, len(mac_hndlr)):
