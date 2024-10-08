@@ -15,7 +15,7 @@
 To access the detailed report or input document submitted: [Input Document for Hackathon](https://github.com/mprsk/CQI-Prediction/blob/main/docs/INPUT%20DOCUMENT%20-%20IITJ%20-%20A%20Real%20Time%20CQI%20Prediction%20Framework%20for%20Proactive%20Resource%20Scheduling%20in%205G%20Enabled%20Drones%20Using%20%20AI.pdf)
 
 For accessing the PPT Slides: 
-Day 1 - [PPT Submitted for Hackathon](https://github.com/mprsk/CQI-Prediction/blob/main/docs/PPT-IITJ-A%20Real-time%20CQI%20Prediction%20Framework%20for%20Proactive%20Resource%20Scheduling%20in%205G%20Enabled%20Drones%20Using%20AI.pdf)
+Day 1 - [PPT Submitted for Hackathon](https://github.com/mprsk/CQI-Prediction/blob/main/docs/PPT-IITJ-A%20Real-time%20CQI%20Prediction%20Framework%20for%20Proactive%20Resource%20Scheduling%20in%205G%20Enabled%20Drones%20Using%20AI.pdf),
 Day 2 - [PPT Submitted for Hackathon](https://github.com/mprsk/CQI-Prediction/blob/main/docs/Updates%20-%20A%20Real-time%20CQI%20Prediction%20Framework%20for%20Proactive%20Resource%20Scheduling%20in%205G%20Enabled%20Drones%20Using%20%20AI.pdf)
 
 Link to Demonstration: [Demo](https://drive.google.com/file/d/124mjP_nyRF04Y7h0eEQ-d7MRl5wvXIsC/view?usp=drive_link)
